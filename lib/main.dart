@@ -1,11 +1,11 @@
+import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hexcolor/hexcolor.dart';
 
-import 'features/views/splash_view.dart';
+import 'features/Splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(const BooklyApp());
+  runApp(BooklyApp());
 }
 
 class BooklyApp extends StatelessWidget {
@@ -15,10 +15,10 @@ class BooklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData().copyWith(
-        scaffoldBackgroundColor: HexColor("051935"),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: maincolor,
       ),
-      home: SplashView(),
+      home: const SplashView(),
     );
   }
 }
