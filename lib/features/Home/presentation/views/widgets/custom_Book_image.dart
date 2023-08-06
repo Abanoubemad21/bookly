@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget CustomListItem(context) {
+Widget CustomBookImage(context) {
   return AspectRatio(
     aspectRatio: 2.6 / 4,
     child: Container(

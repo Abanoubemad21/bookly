@@ -1,9 +1,9 @@
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-import 'bestSeller_List_View_Item.dart';
+import '../../../../../core/widgets/custom_ListView.dart';
+import 'books_List_view.dart';
 import 'custom_appBar.dart';
-import 'custom_list_view.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -19,7 +19,10 @@ class HomeBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(),
-              CustomListView(context),
+              CustomListView(
+                count: 9,
+                height: .3,
+              ),
               const SizedBox(
                 height: 40,
               ),
@@ -39,30 +42,10 @@ class HomeBody extends StatelessWidget {
         const SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0),
-            child: BestSellerListView(),
+            child: BooksListView(),
           ),
         )
       ],
-    );
-  }
-}
-
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      scrollDirection: Axis.vertical,
-      itemCount: 10,
-      padding: EdgeInsets.zero,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: BestSellerListViewItem(),
-        );
-      },
     );
   }
 }
