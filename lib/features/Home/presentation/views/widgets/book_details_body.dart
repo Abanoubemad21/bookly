@@ -18,16 +18,17 @@ class BookDetailsBody extends StatelessWidget {
         SliverFillRemaining(
           child: Scaffold(
             body: Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(children: [
                 const BookDetailsAppBar(),
                 const SizedBox(
                   height: 8,
                 ),
                 Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: myQuerywidth(context, .27)),
-                    child: CustomBookImage(context)),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: myQuerywidth(context, .27)),
+                  child: CustomBookImage(img: null),
+                ),
                 const SizedBox(
                   height: 46,
                 ),
@@ -51,7 +52,11 @@ class BookDetailsBody extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const BookRating(mainAxisAlignment: MainAxisAlignment.center),
+                const BookRating(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  count: 0,
+                  rate: 0,
+                ),
                 const SizedBox(
                   height: 30,
                 ),
