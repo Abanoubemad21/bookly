@@ -1,17 +1,17 @@
 import 'package:bookly/core/widgets/custom_loading.dart';
-import 'package:bookly/features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/Home/presentation/manager/featured_book_cubit/featured_book_Cubit.dart';
 import 'package:bookly/features/Home/presentation/manager/featured_book_cubit/featured_book_States.dart';
+import 'package:bookly/features/Home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../constants.dart';
-import '../../features/Home/presentation/views/widgets/custom_Book_image.dart';
-import '../utils/routes.dart';
-import 'custom_error.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/routes.dart';
+import '../../../../../core/widgets/custom_error.dart';
+import 'custom_Book_image.dart';
 
-class CustomListView extends StatelessWidget {
-  const CustomListView({
+class SimilarListView extends StatelessWidget {
+  const SimilarListView({
     super.key,
     required this.height,
   });
@@ -19,9 +19,9 @@ class CustomListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksStates>(
+    return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
         builder: (context, state) {
-      if (state is FeaturedBookSuccess) {
+      if (state is SimilarBooksSuccess) {
         return SizedBox(
           height: myQueryheight(context, height),
           child: ListView.builder(
@@ -46,7 +46,7 @@ class CustomListView extends StatelessWidget {
             },
           ),
         );
-      } else if (state is FeaturedBookError) {
+      } else if (state is SimilarBooksError) {
         return CustomErrorWidget(
           errMessage: state.err,
         );

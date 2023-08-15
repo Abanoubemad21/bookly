@@ -20,7 +20,7 @@ class BooksListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Goto(context, AccessRoutes.bookDetailsView);
+        GotoExtra(context, AccessRoutes.bookDetailsView, bookModel);
       },
       child: Row(
         children: [
@@ -33,7 +33,7 @@ class BooksListViewItem extends StatelessWidget {
                 child: CachedNetworkImage(
                   filterQuality: FilterQuality.high,
                   fit: BoxFit.fill,
-                  imageUrl: bookModel.volumeInfo!.imageLinks.thumbnail,
+                  imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
                   placeholder: (context, url) =>
                       const Center(child: CircularProgressIndicator()),
                   errorWidget: (context, url, error) => Icon(Icons.error),
@@ -51,7 +51,7 @@ class BooksListViewItem extends StatelessWidget {
                 SizedBox(
                   width: myQuerywidth(context, 0.7),
                   child: Text(
-                    bookModel.volumeInfo!.title!,
+                    bookModel.volumeInfo.title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.styleText18.copyWith(
@@ -63,7 +63,7 @@ class BooksListViewItem extends StatelessWidget {
                   height: 3,
                 ),
                 Text(
-                  bookModel.volumeInfo!.authors?[0] ?? 'unknown',
+                  bookModel.volumeInfo.authors?[0] ?? 'unknown',
                   style: Styles.styleText14.copyWith(color: HexColor('8b8993')),
                 ),
                 const SizedBox(
@@ -78,8 +78,8 @@ class BooksListViewItem extends StatelessWidget {
                     ),
                     const Spacer(),
                     BookRating(
-                      count: bookModel.volumeInfo!.averageRating ?? 0,
-                      rate: bookModel.volumeInfo!.ratingsCount ?? 0,
+                      count: bookModel.volumeInfo.ratingsCount ?? 0,
+                      rate: bookModel.volumeInfo.averageRating?.round() ?? 0,
                     ),
                   ],
                 )

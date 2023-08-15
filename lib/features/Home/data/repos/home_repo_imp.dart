@@ -16,7 +16,7 @@ class HomeRepoImp implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
       var data = await apiServices.getData(
-          endPoint: "volumes?q=Egypt&Filtering=free-ebooks");
+          endPoint: "volumes?q=flutter&Sorting=newest&Filtering=free-ebooks");
       List<BookModel> books = [];
       for (var element in data["items"]) {
         books.add(BookModel.fromJson(element));
@@ -34,7 +34,27 @@ class HomeRepoImp implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiServices.getData(
-          endPoint: "volumes?q=Egypt&Filtering=free-ebooks");
+          endPoint: "volumes?q=flutter&Filtering=free-ebooks");
+      List<BookModel> books = [];
+      for (var element in data["items"]) {
+        books.add(BookModel.fromJson(element));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(serverfailure.fromDioException(e));
+      }
+      return left(serverfailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
+      var data = await apiServices.getData(
+          endPoint:
+              "volumes?q=flutter&Sorting=relevance&Filtering=free-ebooks");
       List<BookModel> books = [];
       for (var element in data["items"]) {
         books.add(BookModel.fromJson(element));
