@@ -29,13 +29,13 @@ class BookDetailsBody extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       horizontal: myQuerywidth(context, .27)),
                   child: CustomBookImage(
-                      img: bookModel.volumeInfo.imageLinks?.thumbnail ?? ""),
+                      img: bookModel.volumeInfo!.imageLinks?.thumbnail ?? ""),
                 ),
                 const SizedBox(
                   height: 46,
                 ),
                 Text(
-                  bookModel.volumeInfo.title ?? "Not Found",
+                  bookModel.volumeInfo!.title ?? "Not Found",
                   style:
                       Styles.styleText20.copyWith(fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
@@ -46,7 +46,7 @@ class BookDetailsBody extends StatelessWidget {
                 Opacity(
                   opacity: 0.7,
                   child: Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo!.authors?[0] ?? 'unKnown',
                     style: Styles.styleText16.copyWith(
                       fontStyle: FontStyle.italic,
                     ),
@@ -57,8 +57,8 @@ class BookDetailsBody extends StatelessWidget {
                 ),
                 BookRating(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  rate: bookModel.volumeInfo.averageRating?.round() ?? 0,
-                  count: bookModel.volumeInfo.ratingsCount ?? 0,
+                  rate: bookModel.volumeInfo!.averageRating?.round() ?? 0,
+                  count: bookModel.volumeInfo!.ratingsCount ?? 0,
                 ),
                 const SizedBox(
                   height: 30,
@@ -66,8 +66,8 @@ class BookDetailsBody extends StatelessWidget {
                 BookDetailsActions(
                   bookModel: bookModel,
                 ),
-                Expanded(
-                  child: const SizedBox(
+                const Expanded(
+                  child: SizedBox(
                     height: 50,
                   ),
                 ),

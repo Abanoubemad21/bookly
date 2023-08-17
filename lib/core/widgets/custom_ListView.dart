@@ -26,20 +26,20 @@ class CustomListView extends StatelessWidget {
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: state.bookmodel.length,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             shrinkWrap: false,
-            padding: EdgeInsets.symmetric(horizontal: 3),
+            padding: const EdgeInsets.symmetric(horizontal: 3),
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 9.0),
-                child: InkWell(
+                child: GestureDetector(
                   onTap: () {
                     GotoExtra(context, AccessRoutes.bookDetailsView,
                         state.bookmodel[index]);
                   },
                   child: CustomBookImage(
                       img: state
-                          .bookmodel[index].volumeInfo.imageLinks!.thumbnail),
+                          .bookmodel[index].volumeInfo!.imageLinks?.thumbnail),
                 ),
               );
             },

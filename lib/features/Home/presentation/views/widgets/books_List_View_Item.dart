@@ -34,7 +34,8 @@ class BooksListViewItem extends StatelessWidget {
                 child: CachedNetworkImage(
                   filterQuality: FilterQuality.high,
                   fit: BoxFit.fill,
-                  imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+                  imageUrl: bookModel.volumeInfo!.imageLinks?.thumbnail ??
+                      "assets/images/bookloading.png",
                   placeholder: (context, url) => const CustomLoadingWidget(),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
@@ -51,7 +52,7 @@ class BooksListViewItem extends StatelessWidget {
                 SizedBox(
                   width: myQuerywidth(context, 0.7),
                   child: Text(
-                    bookModel.volumeInfo.title!,
+                    bookModel.volumeInfo!.title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.styleText18.copyWith(
@@ -63,7 +64,7 @@ class BooksListViewItem extends StatelessWidget {
                   height: 3,
                 ),
                 Text(
-                  bookModel.volumeInfo.authors?[0] ?? 'unknown',
+                  bookModel.volumeInfo!.authors?[0] ?? 'unknown',
                   style: Styles.styleText14.copyWith(color: HexColor('8b8993')),
                 ),
                 const SizedBox(
@@ -78,8 +79,8 @@ class BooksListViewItem extends StatelessWidget {
                     ),
                     const Spacer(),
                     BookRating(
-                      count: bookModel.volumeInfo.ratingsCount ?? 0,
-                      rate: bookModel.volumeInfo.averageRating?.round() ?? 0,
+                      count: bookModel.volumeInfo!.ratingsCount ?? 0,
+                      rate: bookModel.volumeInfo!.averageRating?.round() ?? 0,
                     ),
                   ],
                 )

@@ -34,9 +34,10 @@ class SearchBooksListViewItem extends StatelessWidget {
                 child: CachedNetworkImage(
                   filterQuality: FilterQuality.high,
                   fit: BoxFit.fill,
-                  imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+                  imageUrl: bookModel.volumeInfo!.imageLinks?.thumbnail ??
+                      'assets/images/Logo.png',
                   placeholder: (context, url) => const CustomLoadingWidget(),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
             ),
@@ -51,7 +52,7 @@ class SearchBooksListViewItem extends StatelessWidget {
                 SizedBox(
                   width: myQuerywidth(context, 0.7),
                   child: Text(
-                    bookModel.volumeInfo.title!,
+                    bookModel.volumeInfo!.title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.styleText18.copyWith(
@@ -63,7 +64,7 @@ class SearchBooksListViewItem extends StatelessWidget {
                   height: 3,
                 ),
                 Text(
-                  bookModel.volumeInfo.authors?[0] ?? 'unknown',
+                  bookModel.volumeInfo!.authors?[0] ?? 'unknown',
                   style: Styles.styleText14.copyWith(color: HexColor('8b8993')),
                 ),
                 const SizedBox(
@@ -78,8 +79,8 @@ class SearchBooksListViewItem extends StatelessWidget {
                     ),
                     const Spacer(),
                     BookRating(
-                      count: bookModel.volumeInfo.ratingsCount ?? 0,
-                      rate: bookModel.volumeInfo.averageRating?.round() ?? 0,
+                      count: bookModel.volumeInfo!.ratingsCount ?? 0,
+                      rate: bookModel.volumeInfo!.averageRating?.round() ?? 0,
                     ),
                   ],
                 )

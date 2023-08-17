@@ -29,7 +29,7 @@ class BookDetailsActions extends StatelessWidget {
             text: "Preview",
             backGroundcolor: HexColor('f08262'),
             fun: () async {
-              Uri _url = Uri.parse(bookModel.volumeInfo.previewLink!);
+              Uri _url = Uri.parse(bookModel.volumeInfo!.previewLink!);
 
               if (await canLaunchUrl(_url)) {
                 await launchUrl(_url);

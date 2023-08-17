@@ -3,7 +3,7 @@ import 'package:bookly/core/widgets/custom_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../Home/presentation/manager/cubit/book_search_cubit.dart';
+import '../../../../Home/presentation/manager/book_search_cubit/book_search_cubit.dart';
 import 'search _listview_item.dart';
 
 class SearchListView extends StatelessWidget {

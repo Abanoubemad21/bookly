@@ -2,7 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../Home/presentation/manager/cubit/book_search_cubit.dart';
+import '../../../../Home/presentation/manager/book_search_cubit/book_search_cubit.dart';
 
 class SearchTextField extends StatelessWidget {
   SearchTextField({
@@ -17,7 +17,7 @@ class SearchTextField extends StatelessWidget {
           controller: searchCon,
           decoration: InputDecoration(
               suffixIcon: IconButton(
-                icon: Opacity(
+                icon: const Opacity(
                     opacity: .7,
                     child: Icon(
                       EvaIcons.search,
