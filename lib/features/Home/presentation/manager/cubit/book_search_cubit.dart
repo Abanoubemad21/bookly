@@ -1,5 +1,3 @@
-import 'package:bloc/bloc.dart';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,8 +10,10 @@ class BookSearchCubit extends Cubit<BookSearchState> {
   BookSearchCubit(this.homeRepo) : super(BookSearchInitial());
   final HomeRepo homeRepo;
   static BookSearchCubit get(context) => BlocProvider.of(context);
+  // ignore: non_constant_identifier_names
   Future<void> FetchBookSearch({required String val}) async {
     emit(BookSearchLoading());
+    // ignore: unnecessary_null_comparison
     if (val == null) {
       emit(BookSearchLoading());
     } else {

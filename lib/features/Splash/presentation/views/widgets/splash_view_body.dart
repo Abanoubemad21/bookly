@@ -1,10 +1,8 @@
-import 'package:bookly/features/Home/presentation/views/home.dart';
 import 'package:bookly/features/Splash/presentation/views/widgets/splash_view_animations.dart';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../constants.dart';
 import '../../../../../core/utils/routes.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -51,11 +49,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 
+  // ignore: non_constant_identifier_names
   void InitSlidingAnimations() {
-    animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
-    animationController2 =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    animationController2 = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
 
     slidingAnimation =
         Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero)

@@ -1,6 +1,4 @@
 import 'package:bookly/core/widgets/custom_loading.dart';
-import 'package:bookly/features/Home/presentation/manager/featured_book_cubit/featured_book_Cubit.dart';
-import 'package:bookly/features/Home/presentation/manager/featured_book_cubit/featured_book_States.dart';
 import 'package:bookly/features/Home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,9 +25,9 @@ class SimilarListView extends StatelessWidget {
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: state.bookmodel.length,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             shrinkWrap: false,
-            padding: EdgeInsets.symmetric(horizontal: 3),
+            padding: const EdgeInsets.symmetric(horizontal: 3),
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 9.0),

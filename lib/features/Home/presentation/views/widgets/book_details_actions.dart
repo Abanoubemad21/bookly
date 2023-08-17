@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// ignore: must_be_immutable
 class BookDetailsActions extends StatelessWidget {
   BookDetailsActions({super.key, required this.bookModel});
   BookModel bookModel;
@@ -17,7 +18,7 @@ class BookDetailsActions extends StatelessWidget {
             backGroundcolor: Colors.white,
             fun: () {},
             textColor: Colors.black,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(15),
               bottomLeft: Radius.circular(15),
             ),
@@ -35,7 +36,7 @@ class BookDetailsActions extends StatelessWidget {
               }
             },
             textColor: Colors.white,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topRight: Radius.circular(15),
               bottomRight: Radius.circular(15),
             ),

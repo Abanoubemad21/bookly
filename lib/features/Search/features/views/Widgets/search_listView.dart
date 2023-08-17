@@ -1,6 +1,5 @@
 import 'package:bookly/core/widgets/custom_error.dart';
 import 'package:bookly/core/widgets/custom_loading.dart';
-import 'package:bookly/features/Home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

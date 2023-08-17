@@ -1,4 +1,3 @@
-import 'package:bookly/features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/Search/features/views/Widgets/search_textfield.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
@@ -16,10 +15,10 @@ class SearchBody extends StatelessWidget {
       child: Column(
         children: [
           SearchTextField(),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Align(
+          const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
               padding: EdgeInsets.only(left: 10.0),
@@ -29,10 +28,10 @@ class SearchBody extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          SearchListView(),
+          const SearchListView(),
         ],
       ),
     );

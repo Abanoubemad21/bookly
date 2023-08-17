@@ -1,6 +1,5 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/routes.dart';
-import 'package:bookly/features/Home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:unicons/unicons.dart';
 
@@ -26,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
               onPressed: () {
                 Goto(context, AccessRoutes.searchView);
               },
-              icon: Icon(UniconsLine.search))
+              icon: const Icon(UniconsLine.search))
         ],
       ),
     );
