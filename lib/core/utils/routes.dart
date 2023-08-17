@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/Home/data/repos/home_repo_imp.dart';
+import '../../features/Home/presentation/manager/cubit/book_search_cubit.dart';
 import '../../features/Home/presentation/views/book_details.dart';
 
 abstract class AccessRoutes {
@@ -36,7 +37,19 @@ abstract class AccessRoutes {
       ),
       GoRoute(
         path: searchView,
-        builder: (context, state) => SearchView(),
+        builder: (context, state) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => BookSearchCubit(getIt.get<HomeRepoImp>()),
+            ),
+            BlocProvider(
+              create: (context) => SimilarBooksCubit(
+                getIt.get<HomeRepoImp>(),
+              ),
+            ),
+          ],
+          child: SearchView(),
+        ),
       ),
     ],
   );

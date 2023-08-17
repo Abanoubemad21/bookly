@@ -9,10 +9,10 @@ import '../../../../../constants.dart';
 
 import '../../../../../core/utils/routes.dart';
 import '../../../../../core/utils/styles.dart';
-import 'book_rating.dart';
+import '../../../../Home/presentation/views/widgets/book_rating.dart';
 
-class BooksListViewItem extends StatelessWidget {
-  const BooksListViewItem({
+class SearchBooksListViewItem extends StatelessWidget {
+  const SearchBooksListViewItem({
     super.key,
     required this.bookModel,
   });

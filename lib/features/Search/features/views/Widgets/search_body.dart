@@ -1,15 +1,18 @@
+import 'package:bookly/features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/Search/features/views/Widgets/search_textfield.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
 import 'search_listView.dart';
 
 class SearchBody extends StatelessWidget {
-  const SearchBody({super.key});
+  const SearchBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
         children: [
           SearchTextField(),

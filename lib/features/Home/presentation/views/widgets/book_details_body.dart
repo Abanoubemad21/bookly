@@ -1,14 +1,12 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/Home/data/models/book_model/book_model.dart';
-import 'package:bookly/features/Home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly/features/Home/presentation/views/widgets/book_details_actions.dart';
 import 'package:bookly/features/Home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/features/Home/presentation/views/widgets/custom_Book_image.dart';
 import 'package:bookly/features/Home/presentation/views/widgets/similar_list_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/widgets/custom_ListView.dart';
 import 'book_details_appBar.dart';
 
 class BookDetailsBody extends StatelessWidget {
