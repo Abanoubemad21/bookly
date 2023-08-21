@@ -17,7 +17,7 @@ class SearchListView extends StatelessWidget {
         if (state is BookSearchSuccess) {
           return Expanded(
             child: ListView.builder(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               itemCount: state.bookmodel.length,
               padding: EdgeInsets.zero,

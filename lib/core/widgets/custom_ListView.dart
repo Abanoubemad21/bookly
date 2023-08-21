@@ -50,7 +50,7 @@ class CustomListView extends StatelessWidget {
           errMessage: state.err,
         );
       } else {
-        return CustomLoadingWidget();
+        return const CustomLoadingWidget();
       }
     });
   }

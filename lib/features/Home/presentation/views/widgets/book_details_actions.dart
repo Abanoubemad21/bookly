@@ -16,7 +16,13 @@ class BookDetailsActions extends StatelessWidget {
           child: Mybutton(
             text: "Free",
             backGroundcolor: Colors.white,
-            fun: () {},
+            fun: () async {
+              Uri url = Uri.parse(bookModel.saleInfo!.buyLink ?? '');
+
+              if (await canLaunchUrl(url)) {
+                await launchUrl(url);
+              }
+            },
             textColor: Colors.black,
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(15),
@@ -29,10 +35,10 @@ class BookDetailsActions extends StatelessWidget {
             text: "Preview",
             backGroundcolor: HexColor('f08262'),
             fun: () async {
-              Uri _url = Uri.parse(bookModel.volumeInfo!.previewLink!);
+              Uri url0 = Uri.parse(bookModel.volumeInfo!.previewLink!);
 
-              if (await canLaunchUrl(_url)) {
-                await launchUrl(_url);
+              if (await canLaunchUrl(url0)) {
+                await launchUrl(url0);
               }
             },
             textColor: Colors.white,

@@ -31,7 +31,7 @@ class BooksListView extends StatelessWidget {
         } else if (state is NewestBooksError) {
           return CustomErrorWidget(errMessage: state.err);
         } else {
-          return CustomLoadingWidget();
+          return const CustomLoadingWidget();
         }
       },
     );

@@ -14,6 +14,6 @@ class SearchView extends StatelessWidget {
             appBar: AppBar(
               backgroundColor: maincolor,
             ),
-            body: SearchBody()));
+            body: const SearchBody()));
   }
 }

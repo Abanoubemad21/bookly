@@ -5,6 +5,6 @@ class CustomErrorWidget extends StatelessWidget {
   final String errMessage;
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("$errMessage"));
+    return Center(child: Text(errMessage));
   }
 }

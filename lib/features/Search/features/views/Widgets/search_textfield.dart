@@ -38,7 +38,7 @@ class SearchTextField extends StatelessWidget {
 
   OutlineInputBorder OutlinedinputBorder() {
     return OutlineInputBorder(
-        borderSide: BorderSide(
+        borderSide: const BorderSide(
           color: Colors.white,
         ),
         borderRadius: BorderRadius.circular(15));

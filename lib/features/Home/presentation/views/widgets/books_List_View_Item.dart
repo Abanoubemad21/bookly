@@ -35,9 +35,9 @@ class BooksListViewItem extends StatelessWidget {
                   filterQuality: FilterQuality.high,
                   fit: BoxFit.fill,
                   imageUrl: bookModel.volumeInfo!.imageLinks?.thumbnail ??
-                      "assets/images/bookloading.png",
+                      "https://img.freepik.com/free-icon/cancel_318-224169.jpg?size=626&ext=jpg",
                   placeholder: (context, url) => const CustomLoadingWidget(),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
             ),

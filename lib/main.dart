@@ -14,7 +14,7 @@ import 'core/utils/routes.dart';
 
 void main() {
   setupServiceLocator();
-  runApp(BooklyApp());
+  runApp(const BooklyApp());
 }
 
 class BooklyApp extends StatelessWidget {

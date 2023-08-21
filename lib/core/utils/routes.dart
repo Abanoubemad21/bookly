@@ -20,11 +20,11 @@ abstract class AccessRoutes {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => SplashView(),
+        builder: (context, state) => const SplashView(),
       ),
       GoRoute(
         path: myHome,
-        builder: (context, state) => MyHome(),
+        builder: (context, state) => const MyHome(),
       ),
       GoRoute(
         path: bookDetailsView,
@@ -48,7 +48,7 @@ abstract class AccessRoutes {
               ),
             ),
           ],
-          child: SearchView(),
+          child: const SearchView(),
         ),
       ),
     ],
